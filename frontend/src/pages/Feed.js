@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import io from 'socket.io-client'
 import api from '../services/api'
 
-import './Feed.css'
+import { PostList } from './FeedStyles'
+
 import more from '../assets/more.svg'
 import like from '../assets/like.svg'
 import comment from '../assets/comment.svg'
@@ -43,7 +44,7 @@ class Feed extends Component {
 
     render() {
         return (
-            <section id='post-list'>
+            <PostList id='post-list'>
                 {this.state.feed.map(posts => (
                     <article key={posts._id}>
                         <header>
@@ -76,7 +77,7 @@ class Feed extends Component {
                     
                     </article>
                 ))}
-            </section>
+            </PostList>
         )
     }
 }
